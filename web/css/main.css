@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    border:0;
+}
+a{
+    text-decoration: none;
+}
+#customerTable{
+    margin-top: 50px;
+}
+
+.fl{
+    float: left;
+}

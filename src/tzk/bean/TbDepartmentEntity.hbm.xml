@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="tzk.bean.TbDepartmentEntity" table="tb_department" schema="tzkSpringTest">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="departName">
+            <column name="departName" sql-type="varchar(30)" length="30"/>
+        </property>
+        <property name="branchId">
+            <column name="branchID" sql-type="int(11)" not-null="true"/>
+        </property>
+        <many-to-one name="branch" fetch="join" update="false" insert="false" lazy="false"  cascade="none" class="tzk.bean.TbBranchEntity">
+
+            <column name="branchID"/>
+        </many-to-one>
+        
+        <set name="roles" cascade="save-update" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="partID"></column>
+            </key>
+            <one-to-many class="tzk.bean.TbRoleEntity"></one-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+/*
+* @Author: Hu
+* @Date:   2019-07-04 15:12:25
+* @Last Modified by:   Hu
+* @Last Modified time: 2019-07-04 15:51:47
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    border:0;
+}
+
+ol, ul ,li{list-style: none;}
+#divForm{margin-top: 200px;
+    margin-bottom: 40px;
+    margin-right:2px;}
+form>div:nth-child(1){border-bottom: 1px solid #49ff14;}

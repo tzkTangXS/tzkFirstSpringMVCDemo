@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tzkFirstSpringMVCDemo:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/tzkFirstSpringMVCDemo_war</output-path>
+    <root id="archive" name="tzkFirstSpringMVCDemo_war.war">
+      <element id="artifact" artifact-name="tzkFirstSpringMVCDemo:war exploded" />
+    </root>
+  </artifact>
+</component>

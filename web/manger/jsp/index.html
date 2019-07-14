@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,user-scalable
+    =no,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".nav>li").hover(function() {
+                $(this).children('ul').show();
+            },function(){
+                  $(this).children('ul').hide();
+            });
+        });
+    </script>
+    <style type="text/css">
+        header li ul{
+            display:none;
+        }
+    </style>
+    <title>Document</title>
+
+</head>
+<body>
+    <header class="navbar navbar-inverse">
+        <div class="navbar-header">
+        <a href="#" class="navbar-brand">LOGO</a>
+        </div>
+        <ul class="nav navbar-nav collapse navbar-collapse">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">动作</a></li>
+            <li><a href="#">漫画</a></li>
+            <li><a href="#">恐怖</a></li>
+            <li><a href="#">综艺</a>
+            <ul>
+                <li><a href="#">极限挑战</a></li>
+                <li><a href="#">天坛向上</a></li>
+                <li><a href="#">呵呵哒</a></li>
+                <li><a href="#">无刷刷</a></li>
+            </ul>
+            </li>
+            <li><a href="#">动漫</a></li>
+        </ul>
+        <form action="" class="navbar-form navbar-right"></form>
+
+    </header>
+</body>
+</html>
