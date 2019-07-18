@@ -7,21 +7,6 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
 
-    <!-- 配置自动扫描的包 -->
-<!--    <context:component-scan base-package="tzk">
-        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
-        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
-    </context:component-scan>-->
-
-<!--    <context:annotation-config></context:annotation-config>-->
-<!--扫面包，启用注释，包含<context:annotation-config/>-->
-<!--    <context:component-scan base-package="tzk"/>-->
-
-
-<!--扫描静态资源-->
-    <!---->
-<context:annotation-config></context:annotation-config>
 
 <context:component-scan base-package="tzk.controller" use-default-filters="false">
     <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
@@ -30,44 +15,11 @@
         <mvc:default-servlet-handler/>
 <!--配置默认annotation处理器的映射器和适配器-->
     <mvc:annotation-driven/>
-    <!--    这个Mapping一配置, 我们就可以使用Controller的 [类名.do]来访问这个Controller.-->
-    <!--    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>-->
 
-
-    <!--    <bean class="MyController"/>-->
-
-    <!--    配置处理器适配器来执行Controller,springMVC的默认适配器是：SimpleControllerHandlerAdapter-->
-<!--    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>-->
-    <!--配置自定义Controller-->
-<!--    <bean id="myController" name="/hello" class="MyController"/>-->
-
-    <!--    配置另一个适配器：HttpRequestHandlerAdapter-->
-<!--    <bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter"/>-->
-    <!--    自定义Controller-->
-<!--    <bean id="httpController" class="HttpController"/>-->
-
-<!--    配置逻辑视图解析器：InternalResourceViewResolver(只能实现内部资源的跳转，无法跳转外部资源)-->
-<!--    <bean name="ids" class="tzk.service.impl.CustomerServiceImpl"></bean>-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="jsp/"></property>
         <property name="suffix" value=".jsp"/>
     </bean>
 
 
-    <!--  静态资源交给默认的Servlet-->
-<!--    <mvc:default-servlet-handler/>-->
-<!--    <mvc:annotation-driven></mvc:annotation-driven>-->
-   <!-- &lt;!&ndash;BeanNameViewResolver&ndash;&gt;
-    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
-    </bean>
-    &lt;!&ndash;    内部访问:请求转发&ndash;&gt;
-    <bean id="myInternalView" class="org.springframework.web.servlet.view.JstlView">
-&lt;!&ndash;        <property name="url" value="WEB-INF/jsp/index.jsp"/>&ndash;&gt;
-&lt;!&ndash;        <property name="p"&ndash;&gt;
-    </bean>
-
-    &lt;!&ndash;    外部访问:重定向&ndash;&gt;
-    <bean id="baidu" class="org.springframework.web.servlet.view.RedirectView">
-        <property name="url" value="https://www.baidu.com/"/>
-    </bean>-->
 </beans>
