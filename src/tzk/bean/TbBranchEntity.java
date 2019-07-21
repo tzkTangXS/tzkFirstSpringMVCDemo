@@ -1,7 +1,5 @@
 package tzk.bean;
 
-import org.hibernate.annotations.Cascade;
-
 import javax.persistence.*;
 import java.util.*;
 
@@ -12,9 +10,11 @@ public class TbBranchEntity {
     private String branchName;
     private String remark;
 
-//    @OneToMany(mappedBy = "tb_branch",fetch = FetchType.LAZY,orphanRemoval = true)
+
+
+    //    @OneToMany(mappedBy = "tb_branch",fetch = FetchType.LAZY,orphanRemoval = true)
 //    @Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE,org.hibernate.annotations.CascadeType.DELETE})
-   private Set<TbDepartmentEntity> departments = new HashSet();
+    private Set<TbDepartmentEntity> departments = new HashSet();
 
     public Set<TbDepartmentEntity> getDepartments() {
         return departments;
@@ -24,21 +24,25 @@ public class TbBranchEntity {
 //        this.departments = departments;
         addDepartments(departments);
     }
-    public void addDepartments(Set<TbDepartmentEntity> departments){
+
+    public void addDepartments(Set<TbDepartmentEntity> departments) {
         this.departments.clear();
-        if(null!=departments&&!departments.isEmpty()){
+        if (null != departments && !departments.isEmpty()) {
             this.departments.addAll(departments);
         }
     }
-    public TbBranchEntity(){
+
+    public TbBranchEntity() {
         super();
     }
+
     /*springMVC会把前端传值和构造方法进行匹配。比如前段的添加界面，含有id的input标签，但是因为是添加，所以并不会id值，
     那么如果实体类中没有不含id且仅含其他inputb标签中的值那么将会报错400,请求无效。*/
     public TbBranchEntity(String branchName, String remark) {
         this.branchName = branchName;
         this.remark = remark;
     }
+
     @Id
     @Column(name = "id", nullable = false)
     public int getId() {

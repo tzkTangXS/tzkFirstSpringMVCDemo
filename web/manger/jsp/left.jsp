@@ -21,6 +21,7 @@
 <table width="90%" border="0" cellspacing="1" cellpadding="2" align="center">
 
     <div class="dtree">
+<%--        <h4>${pageContext.request.contextPath}</h4>--%>
         <h1>管理员 ${sessionScope.name}<br/>正在执行操作<br/>
 <%--            <a href="login.jsp">退出</a>--%>
 

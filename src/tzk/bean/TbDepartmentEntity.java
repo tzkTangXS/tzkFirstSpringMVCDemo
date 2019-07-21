@@ -13,11 +13,11 @@ public class TbDepartmentEntity {
     private int branchId;
 
 
-/*    @ManyToOne(fetch =FetchType.LAZY)
-    @JoinColumn(name = "branchID",insertable = false)*/
-   private TbBranchEntity branch;
+    /*    @ManyToOne(fetch =FetchType.LAZY)
+        @JoinColumn(name = "branchID",insertable = false)*/
+    private TbBranchEntity branch;
 
-   private Set<TbRoleEntity> roles = new HashSet();
+    private Set<TbRoleEntity> roles = new HashSet();
 
 
     public TbBranchEntity getBranch() {

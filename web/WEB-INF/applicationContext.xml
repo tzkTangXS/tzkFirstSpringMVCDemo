@@ -11,8 +11,6 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <context:annotation-config></context:annotation-config>
     <context:component-scan base-package="tzk">
-        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
-        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
     <tx:annotation-driven transaction-manager="txManager"/>
@@ -62,6 +60,8 @@
     <bean id="txManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+    <!--实体类-->
+    <bean id="branch" class="tzk.bean.TbBranchEntity"/>
 
 
 </beans>
